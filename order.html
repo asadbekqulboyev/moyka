@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="src/styles.css">
+    <link rel="stylesheet" href="./src/order.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Tektur:wght@400..900&display=swap"
+        rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+
+    <title>Автомойка Люксембург</title>
+</head>
+
+<body class="white-bg">
+    <div class="wrapper">
+        <section class="order">
+            <div class="order-row">
+                <div class="calendar-container">
+                    <div class="calendar">
+                        <div class="calendar-header">
+                            <div class="display-monthyear">
+                                <button type="button" id="prevMonth2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="34" height="35" viewBox="0 0 34 35"
+                                        fill="none">
+                                        <path transform="scale(-1, 1) translate(-34, 0)"
+                                            d="M22.3536 18.1542C22.5488 17.959 22.5488 17.6424 22.3536 17.4471L19.1716 14.2651C18.9763 14.0699 18.6597 14.0699 18.4645 14.2651C18.2692 14.4604 18.2692 14.777 18.4645 14.9722L21.2929 17.8007L18.4645 20.6291C18.2692 20.8243 18.2692 21.1409 18.4645 21.3362C18.6597 21.5315 18.9763 21.5315 19.1716 21.3362L22.3536 18.1542ZM12 18.3007H22V17.3007H12V18.3007Z"
+                                            fill="black" />
+                                    </svg>
+                                </button>
+                                <span id="monthYear2" class="text">2024 Ноябрь</span>
+                                <button type="button" id="nextMonth2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="34" height="35" viewBox="0 0 34 35"
+                                        fill="none">
+                                        <path
+                                            d="M22.3536 18.1542C22.5488 17.959 22.5488 17.6424 22.3536 17.4471L19.1716 14.2651C18.9763 14.0699 18.6597 14.0699 18.4645 14.2651C18.2692 14.4604 18.2692 14.777 18.4645 14.9722L21.2929 17.8007L18.4645 20.6291C18.2692 20.8243 18.2692 21.1409 18.4645 21.3362C18.6597 21.5315 18.9763 21.5315 19.1716 21.3362L22.3536 18.1542ZM12 18.3007H22V17.3007H12V18.3007Z"
+                                            fill="black" />
+                                    </svg>
+                                </button </div>
+                            </div>
+                            <div class="calendar-days" id="daysContainer2"></div>
+                            <div class="display-monthyear mobile-open dayMonth">
+                                <button type="button" id="prevDay2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="34" height="35" viewBox="0 0 34 35"
+                                        fill="none">
+                                        <path transform="scale(-1, 1) translate(-34, 0)"
+                                            d="M22.3536 18.1542C22.5488 17.959 22.5488 17.6424 22.3536 17.4471L19.1716 14.2651C18.9763 14.0699 18.6597 14.0699 18.4645 14.2651C18.2692 14.4604 18.2692 14.777 18.4645 14.9722L21.2929 17.8007L18.4645 20.6291C18.2692 20.8243 18.2692 21.1409 18.4645 21.3362C18.6597 21.5315 18.9763 21.5315 19.1716 21.3362L22.3536 18.1542ZM12 18.3007H22V17.3007H12V18.3007Z"
+                                            fill="black" />
+                                    </svg>
+                                </button>
+                                <span id="dayMonth" class="text">22 ноября</span>
+                                <button type="button" id="nextDay2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="34" height="35" viewBox="0 0 34 35"
+                                        fill="none">
+                                        <path
+                                            d="M22.3536 18.1542C22.5488 17.959 22.5488 17.6424 22.3536 17.4471L19.1716 14.2651C18.9763 14.0699 18.6597 14.0699 18.4645 14.2651C18.2692 14.4604 18.2692 14.777 18.4645 14.9722L21.2929 17.8007L18.4645 20.6291C18.2692 20.8243 18.2692 21.1409 18.4645 21.3362C18.6597 21.5315 18.9763 21.5315 19.1716 21.3362L22.3536 18.1542ZM12 18.3007H22V17.3007H12V18.3007Z"
+                                            fill="black" />
+                                    </svg>
+                                </button </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="order-infos mobile-hidden">
+                        <h2 class="order-info-title">Неделя 7-15 ноября:</h2>
+                        <p class="order-info-item">Заказов всего за эту неделю <span>28</span></p>
+                        <p class="order-info-item">Заказов уже выполнено<span>10</span></p>
+                        <p class="order-info-item">Заказов осталось <span>18</span></p>
+                        <p class="order-info-item">Заказов отменено <span>0</span></p>
+                        <h2 class="order-info-title">Неделя 7-15 ноября:</h2>
+                        <p class="order-info-item">Заказов всего в этом месяце <span>1665</span></p>
+                        <p class="order-info-item">Заказов уже выполнено<span>10</span></p>
+                        <p class="order-info-item">Заказов осталось <span>144</span></p>
+                        <p class="order-info-item">Заказов отменено <span>1</span></p>
+                    </div>
+                </div>
+                <div class="order-cards mobile-hidden">
+                    <div class="card-item">
+                        <div class="card-hour">8.00 h</div>
+                        <div class="card-image"><img src="src/assets/images/card-car.png" alt=""></div>
+                        <div class="card-infos">
+                            <div class="card-info-item">77.7€</div>
+                            <div class="card-info-item">H700AA</div>
+                            <div class="card-info-item"><a href="tel:+79009005060">+7 900 900 50 60</a></div>
+                            <div class="card-info-item"><a href="mailto:test_1980@gmail.com">test_1980@gmail.com</a>
+                            </div>
+                            <div class="card-info-item">LADA Granta</div>
+                            <div class="card-info-item" th:text="#{card.five.seats}">5 мест</div>
+                            <div class="card-info-item" th:text="#{order.input.in_garage}">в гараже</div>
+                        </div>
+                        <a href="#" class="orange-btn-bordered" th:text="#{map}">карта</a>
+                        <div class="card-feature">
+                            <img src="src/assets/svgicons/check-green.svg" alt="">
+                            <span th:text="#{intro.wash_outside}">Мойка снаружи</span>
+                        </div>
+                        <div class="card-feature">
+                            <img src="src/assets/svgicons/check-green.svg" alt="">
+                            <span th:text="#{card.wash.inside}">Мойка внутри</span>
+                        </div>
+                        <div class="card-feature">
+                            <img src="src/assets/svgicons/check-green.svg" alt="">
+                            <span th:text="#{order.input.vacuum_cleaner}">Пылесос</span>
+                        </div>
+                        <div class="card-feature">
+                            <img src="src/assets/svgicons/check-green.svg" alt="">
+                            <span th:text="#{order.input.glass_washing}">Мойка стекол</span>
+                        </div>
+                        <div class="card-feature">
+                            <img src="src/assets/svgicons/check-green.svg" alt="">
+                            <span th:text="#{card.anti.rain}">Воск “Антидождь”</span>
+                        </div>
+                    </div>
+                    <div class="card-item">
+                        <div class="card-hour">11.00 h</div>
+                        <div class="card-image"><img src="src/assets/images/card-car.png" alt=""></div>
+                        <div class="card-infos">
+                            <div class="card-info-item">77.7€</div>
+                            <div class="card-info-item">H700AA</div>
+                            <div class="card-info-item"><a href="tel:+79009005060">+7 900 900 50 60</a></div>
+                            <div class="card-info-item"><a href="mailto:test_1980@gmail.com">test_1980@gmail.com</a>
+                            </div>
+                            <div class="card-info-item">LADA Granta</div>
+                            <div class="card-info-item" th:text="#{card.five.seats}">5 мест</div>
+                            <div class="card-info-item" th:text="#{order.input.in_garage}">в гараже</div>
+                        </div>
+                        <a href="#" class="orange-btn-bordered">карта</a>
+                        <div class="card-feature">
+                            <img src="src/assets/svgicons/check-green.svg" alt="">
+                            <span th:text="#{intro.wash_outside}">Мойка снаружи</span>
+                        </div>
+                        <div class="card-feature">
+                            <img src="src/assets/svgicons/check-green.svg" alt="">
+                            <span th:text="#{card.wash.inside}">Мойка внутри</span>
+                        </div>
+                        <div class="card-feature">
+                            <img src="src/assets/svgicons/check-green.svg" alt="">
+                            <span th:text="#{order.input.vacuum_cleaner}">Пылесос</span>
+                        </div>
+                        <div class="card-feature">
+                            <img src="src/assets/svgicons/check-green.svg" alt="">
+                            <span th:text="#{order.input.glass_washing}">Мойка стекол</span>
+                        </div>
+                        <div class="card-feature">
+                            <img src="src/assets/svgicons/check-green.svg" alt="">
+                            <span th:text="#{card.anti.rain}">Воск “Антидождь”</span>
+                        </div>
+                    </div>
+                    <div class="card-item">
+                        <div class="card-hour">14.00 h</div>
+                        <div class="card-image"><img src="src/assets/images/card-car.png" alt=""></div>
+                        <div class="card-infos">
+                            <div class="card-info-item">77.7€</div>
+                            <div class="card-info-item">H700AA</div>
+                            <div class="card-info-item"><a href="tel:+79009005060">+7 900 900 50 60</a></div>
+                            <div class="card-info-item"><a href="mailto:test_1980@gmail.com">test_1980@gmail.com</a>
+                            </div>
+                            <div class="card-info-item">LADA Granta</div>
+                            <div class="card-info-item" th:text="#{card.five.seats}">5 мест</div>
+                            <div class="card-info-item" th:text="#{order.input.in_garage}">в гараже</div>
+                        </div>
+                        <a href="#" class="orange-btn-bordered">карта</a>
+                        <div class="card-feature">
+                            <img src="src/assets/svgicons/check-green.svg" alt="">
+                            <span th:text="#{intro.wash_outside}">Мойка снаружи</span>
+                        </div>
+                        <div class="card-feature">
+                            <img src="src/assets/svgicons/check-green.svg" alt="">
+                            <span th:text="#{card.wash.inside}">Мойка внутри</span>
+                        </div>
+                        <div class="card-feature">
+                            <img src="src/assets/svgicons/check-green.svg" alt="">
+                            <span th:text="#{order.input.vacuum_cleaner}">Пылесос</span>
+                        </div>
+                        <div class="card-feature">
+                            <img src="src/assets/svgicons/check-green.svg" alt="">
+                            <span th:text="#{order.input.glass_washing}">Мойка стекол</span>
+                        </div>
+                        <div class="card-feature">
+                            <img src="src/assets/svgicons/check-green.svg" alt="">
+                            <span th:text="#{card.anti.rain}">Воск “Антидождь”</span>
+                        </div>
+                        <a href="#" class="orange-btn" th:text="#{comments}">комментарий</a>
+                    </div>
+                    <div class="card-item">
+                        <div class="card-hour">17.00 h</div>
+                        <div class="card-image"><img src="src/assets/images/card-car.png" alt=""></div>
+                        <div class="card-infos">
+                            <div class="card-info-item">77.7€</div>
+                            <div class="card-info-item">H700AA</div>
+                            <div class="card-info-item"><a href="tel:+79009005060">+7 900 900 50 60</a></div>
+                            <div class="card-info-item"><a href="mailto:test_1980@gmail.com">test_1980@gmail.com</a>
+                            </div>
+                            <div class="card-info-item">LADA Granta</div>
+                            <div class="card-info-item" th:text="#{card.five.seats}">5 мест</div>
+                            <div class="card-info-item" th:text="#{order.input.in_garage}">в гараже</div>
+                        </div>
+                        <a href="#" class="orange-btn-bordered">карта</a>
+                        <div class="card-feature">
+                            <img src="src/assets/svgicons/check-green.svg" alt="">
+                            <span th:text="#{intro.wash_outside}">Мойка снаружи</span>
+                        </div>
+                        <div class="card-feature">
+                            <img src="src/assets/svgicons/check-green.svg" alt="">
+                            <span th:text="#{card.wash.inside}">Мойка внутри</span>
+                        </div>
+                        <div class="card-feature">
+                            <img src="src/assets/svgicons/check-green.svg" alt="">
+                            <span th:text="#{order.input.vacuum_cleaner}">Пылесос</span>
+                        </div>
+                        <div class="card-feature">
+                            <img src="src/assets/svgicons/check-green.svg" alt="">
+                            <span th:text="#{order.input.glass_washing}">Мойка стекол</span>
+                        </div>
+                        <div class="card-feature">
+                            <img src="src/assets/svgicons/check-green.svg" alt="">
+                            <span th:text="#{card.anti.rain}">Воск “Антидождь”</span>
+                        </div>
+                        <a href="#" class="orange-btn" th:text="#{comments}">комментарий</a>
+                    </div>
+                </div>
+                <div class="cards-nav mobile-open">
+                    <div class="card-hour active" data-tab="1">8.00 h</div>
+                    <div class="card-hour" data-tab="2">11.00 h</div>
+                    <div class="card-hour" data-tab="3">14.00 h</div>
+                    <div class="card-hour" data-tab="4">17.00 h</div>
+                </div>
+                <div class="card-tab mobile-open">
+                    <div class="card-tab-item active" id="content-1">
+                        <div class="card-tab-top">
+                            <div class="card-tab-image">
+                                <img src="src/assets/images/card-car.png" alt="">
+                                <div class="card-car-number">SA 7774</div>
+                                <div class="card-car-name">LADA Granta</div>
+                            </div>
+                            <div class="card-car-infos">
+                                <div class="card-car-price">
+                                    77.7€ // 5 Place // GAR
+                                </div>
+                                <div class="card-car-contact">
+                                    <a href="tel:+352691222444">+352 691 222 444</a>
+                                    <a href="mailto:jrgfeg@rhgfeg.com">jrgfeg@rhgfeg.com</a>
+                                </div>
+                                <a href="#" class="card-car-btn">карта</a>
+                            </div>
+                        </div>
+                        <div class="card-tab-checks">
+                            <div class="card-check-item">
+                                <div class="green">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="8" viewBox="0 0 10 8"
+                                        fill="none">
+                                        <g clip-path="url(#clip0_62_3240)">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M1.55112 3.5563L0.667239 4.44018L3.07593 6.84887L3.07568 6.84912L3.95957 7.733L9.681 2.01157L8.79712 1.12768L3.95981 5.96499L1.55112 3.5563Z"
+                                                fill="white" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_62_3240">
+                                                <rect width="10" height="7.08333" fill="white"
+                                                    transform="translate(0 0.901123)" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                int/ext
+                            </div>
+                            <div class="card-check-item">
+                                <div class="green">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="8" viewBox="0 0 10 8"
+                                        fill="none">
+                                        <g clip-path="url(#clip0_62_3240)">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M1.55112 3.5563L0.667239 4.44018L3.07593 6.84887L3.07568 6.84912L3.95957 7.733L9.681 2.01157L8.79712 1.12768L3.95981 5.96499L1.55112 3.5563Z"
+                                                fill="white" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_62_3240">
+                                                <rect width="10" height="7.08333" fill="white"
+                                                    transform="translate(0 0.901123)" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                Asp
+                            </div>
+                            <div class="card-check-item">
+                                <div class="green">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="8" viewBox="0 0 10 8"
+                                        fill="none">
+                                        <g clip-path="url(#clip0_62_3240)">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M1.55112 3.5563L0.667239 4.44018L3.07593 6.84887L3.07568 6.84912L3.95957 7.733L9.681 2.01157L8.79712 1.12768L3.95981 5.96499L1.55112 3.5563Z"
+                                                fill="white" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_62_3240">
+                                                <rect width="10" height="7.08333" fill="white"
+                                                    transform="translate(0 0.901123)" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                Glas
+                            </div>
+                            <div class="card-check-item">
+                                <div class="green">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="8" viewBox="0 0 10 8"
+                                        fill="none">
+                                        <g clip-path="url(#clip0_62_3240)">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M1.55112 3.5563L0.667239 4.44018L3.07593 6.84887L3.07568 6.84912L3.95957 7.733L9.681 2.01157L8.79712 1.12768L3.95981 5.96499L1.55112 3.5563Z"
+                                                fill="white" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_62_3240">
+                                                <rect width="10" height="7.08333" fill="white"
+                                                    transform="translate(0 0.901123)" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                Wosk
+                            </div>
+                            <div class="card-check-item">
+                                <div class="orange">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="8" viewBox="0 0 10 8"
+                                        fill="none">
+                                        <g clip-path="url(#clip0_62_3240)">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M1.55112 3.5563L0.667239 4.44018L3.07593 6.84887L3.07568 6.84912L3.95957 7.733L9.681 2.01157L8.79712 1.12768L3.95981 5.96499L1.55112 3.5563Z"
+                                                fill="white" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_62_3240">
+                                                <rect width="10" height="7.08333" fill="white"
+                                                    transform="translate(0 0.901123)" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                Ozon
+                            </div>
+                            <div class="card-check-item">
+                                <div class="orange">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="8" viewBox="0 0 10 8"
+                                        fill="none">
+                                        <g clip-path="url(#clip0_62_3240)">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M1.55112 3.5563L0.667239 4.44018L3.07593 6.84887L3.07568 6.84912L3.95957 7.733L9.681 2.01157L8.79712 1.12768L3.95981 5.96499L1.55112 3.5563Z"
+                                                fill="white" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_62_3240">
+                                                <rect width="10" height="7.08333" fill="white"
+                                                    transform="translate(0 0.901123)" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                S.tum
+                            </div>
+                            <div class="card-check-item">
+                                <div class="orange">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="8" viewBox="0 0 10 8"
+                                        fill="none">
+                                        <g clip-path="url(#clip0_62_3240)">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M1.55112 3.5563L0.667239 4.44018L3.07593 6.84887L3.07568 6.84912L3.95957 7.733L9.681 2.01157L8.79712 1.12768L3.95981 5.96499L1.55112 3.5563Z"
+                                                fill="white" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_62_3240">
+                                                <rect width="10" height="7.08333" fill="white"
+                                                    transform="translate(0 0.901123)" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                Sieg
+                            </div>
+                            <div class="card-check-item">
+                                <div class="orange">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="8" viewBox="0 0 10 8"
+                                        fill="none">
+                                        <g clip-path="url(#clip0_62_3240)">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M1.55112 3.5563L0.667239 4.44018L3.07593 6.84887L3.07568 6.84912L3.95957 7.733L9.681 2.01157L8.79712 1.12768L3.95981 5.96499L1.55112 3.5563Z"
+                                                fill="white" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_62_3240">
+                                                <rect width="10" height="7.08333" fill="white"
+                                                    transform="translate(0 0.901123)" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                Шерсть
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-tab-item " id="content-2">
+                        <div class="card-tab-top">
+                            <div class="card-tab-image">
+                                <img src="src/assets/images/card-car.png" alt="">
+                                <div class="card-car-number">SA 7775</div>
+                                <div class="card-car-name">LADA Granta</div>
+                            </div>
+                            <div class="card-car-infos">
+                                <div class="card-car-price">
+                                    78.7€ // 5 Place // GAR
+                                </div>
+                                <div class="card-car-contact">
+                                    <a href="tel:+352691222444">+352 691 222 444</a>
+                                    <a href="mailto:jrgfeg@rhgfeg.com">jrgfeg@rhgfeg.com</a>
+                                </div>
+                                <a href="#" class="card-car-btn">карта</a>
+                            </div>
+                        </div>
+                        <div class="card-tab-checks">
+                            <div class="card-check-item">
+                                <div class="green">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="8" viewBox="0 0 10 8"
+                                        fill="none">
+                                        <g clip-path="url(#clip0_62_3240)">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M1.55112 3.5563L0.667239 4.44018L3.07593 6.84887L3.07568 6.84912L3.95957 7.733L9.681 2.01157L8.79712 1.12768L3.95981 5.96499L1.55112 3.5563Z"
+                                                fill="white" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_62_3240">
+                                                <rect width="10" height="7.08333" fill="white"
+                                                    transform="translate(0 0.901123)" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                int/ext
+                            </div>
+                            <div class="card-check-item">
+                                <div class="green">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="8" viewBox="0 0 10 8"
+                                        fill="none">
+                                        <g clip-path="url(#clip0_62_3240)">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M1.55112 3.5563L0.667239 4.44018L3.07593 6.84887L3.07568 6.84912L3.95957 7.733L9.681 2.01157L8.79712 1.12768L3.95981 5.96499L1.55112 3.5563Z"
+                                                fill="white" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_62_3240">
+                                                <rect width="10" height="7.08333" fill="white"
+                                                    transform="translate(0 0.901123)" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                Asp
+                            </div>
+                            <div class="card-check-item">
+                                <div class="green">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="8" viewBox="0 0 10 8"
+                                        fill="none">
+                                        <g clip-path="url(#clip0_62_3240)">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M1.55112 3.5563L0.667239 4.44018L3.07593 6.84887L3.07568 6.84912L3.95957 7.733L9.681 2.01157L8.79712 1.12768L3.95981 5.96499L1.55112 3.5563Z"
+                                                fill="white" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_62_3240">
+                                                <rect width="10" height="7.08333" fill="white"
+                                                    transform="translate(0 0.901123)" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                Glas
+                            </div>
+                            <div class="card-check-item">
+                                <div class="green">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="8" viewBox="0 0 10 8"
+                                        fill="none">
+                                        <g clip-path="url(#clip0_62_3240)">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M1.55112 3.5563L0.667239 4.44018L3.07593 6.84887L3.07568 6.84912L3.95957 7.733L9.681 2.01157L8.79712 1.12768L3.95981 5.96499L1.55112 3.5563Z"
+                                                fill="white" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_62_3240">
+                                                <rect width="10" height="7.08333" fill="white"
+                                                    transform="translate(0 0.901123)" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                Wosk
+                            </div>
+                            <div class="card-check-item">
+                                <div class="orange">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="8" viewBox="0 0 10 8"
+                                        fill="none">
+                                        <g clip-path="url(#clip0_62_3240)">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M1.55112 3.5563L0.667239 4.44018L3.07593 6.84887L3.07568 6.84912L3.95957 7.733L9.681 2.01157L8.79712 1.12768L3.95981 5.96499L1.55112 3.5563Z"
+                                                fill="white" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_62_3240">
+                                                <rect width="10" height="7.08333" fill="white"
+                                                    transform="translate(0 0.901123)" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                Ozon
+                            </div>
+                            <div class="card-check-item">
+                                <div class="orange">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="8" viewBox="0 0 10 8"
+                                        fill="none">
+                                        <g clip-path="url(#clip0_62_3240)">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M1.55112 3.5563L0.667239 4.44018L3.07593 6.84887L3.07568 6.84912L3.95957 7.733L9.681 2.01157L8.79712 1.12768L3.95981 5.96499L1.55112 3.5563Z"
+                                                fill="white" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_62_3240">
+                                                <rect width="10" height="7.08333" fill="white"
+                                                    transform="translate(0 0.901123)" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                S.tum
+                            </div>
+                            <div class="card-check-item">
+                                <div class="orange">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="8" viewBox="0 0 10 8"
+                                        fill="none">
+                                        <g clip-path="url(#clip0_62_3240)">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M1.55112 3.5563L0.667239 4.44018L3.07593 6.84887L3.07568 6.84912L3.95957 7.733L9.681 2.01157L8.79712 1.12768L3.95981 5.96499L1.55112 3.5563Z"
+                                                fill="white" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_62_3240">
+                                                <rect width="10" height="7.08333" fill="white"
+                                                    transform="translate(0 0.901123)" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                Sieg
+                            </div>
+                            <div class="card-check-item">
+                                <div class="orange">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="8" viewBox="0 0 10 8"
+                                        fill="none">
+                                        <g clip-path="url(#clip0_62_3240)">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M1.55112 3.5563L0.667239 4.44018L3.07593 6.84887L3.07568 6.84912L3.95957 7.733L9.681 2.01157L8.79712 1.12768L3.95981 5.96499L1.55112 3.5563Z"
+                                                fill="white" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_62_3240">
+                                                <rect width="10" height="7.08333" fill="white"
+                                                    transform="translate(0 0.901123)" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                Шерсть
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-tab-item " id="content-3">
+                        <div class="card-tab-top">
+                            <div class="card-tab-image">
+                                <img src="src/assets/images/card-car.png" alt="">
+                                <div class="card-car-number">SA 7774</div>
+                                <div class="card-car-name">LADA Granta</div>
+                            </div>
+                            <div class="card-car-infos">
+                                <div class="card-car-price">
+                                    77.9€ // 5 Place // GAR
+                                </div>
+                                <div class="card-car-contact">
+                                    <a href="tel:+352691222444">+352 691 222 444</a>
+                                    <a href="mailto:jrgfeg@rhgfeg.com">jrgfeg@rhgfeg.com</a>
+                                </div>
+                                <a href="#" class="card-car-btn">карта</a>
+                            </div>
+                        </div>
+                        <div class="card-tab-checks">
+                            <div class="card-check-item">
+                                <div class="green">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="8" viewBox="0 0 10 8"
+                                        fill="none">
+                                        <g clip-path="url(#clip0_62_3240)">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M1.55112 3.5563L0.667239 4.44018L3.07593 6.84887L3.07568 6.84912L3.95957 7.733L9.681 2.01157L8.79712 1.12768L3.95981 5.96499L1.55112 3.5563Z"
+                                                fill="white" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_62_3240">
+                                                <rect width="10" height="7.08333" fill="white"
+                                                    transform="translate(0 0.901123)" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                int/ext
+                            </div>
+                            <div class="card-check-item">
+                                <div class="green">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="8" viewBox="0 0 10 8"
+                                        fill="none">
+                                        <g clip-path="url(#clip0_62_3240)">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M1.55112 3.5563L0.667239 4.44018L3.07593 6.84887L3.07568 6.84912L3.95957 7.733L9.681 2.01157L8.79712 1.12768L3.95981 5.96499L1.55112 3.5563Z"
+                                                fill="white" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_62_3240">
+                                                <rect width="10" height="7.08333" fill="white"
+                                                    transform="translate(0 0.901123)" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                Asp
+                            </div>
+                            <div class="card-check-item">
+                                <div class="green">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="8" viewBox="0 0 10 8"
+                                        fill="none">
+                                        <g clip-path="url(#clip0_62_3240)">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M1.55112 3.5563L0.667239 4.44018L3.07593 6.84887L3.07568 6.84912L3.95957 7.733L9.681 2.01157L8.79712 1.12768L3.95981 5.96499L1.55112 3.5563Z"
+                                                fill="white" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_62_3240">
+                                                <rect width="10" height="7.08333" fill="white"
+                                                    transform="translate(0 0.901123)" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                Glas
+                            </div>
+                            <div class="card-check-item">
+                                <div class="green">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="8" viewBox="0 0 10 8"
+                                        fill="none">
+                                        <g clip-path="url(#clip0_62_3240)">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M1.55112 3.5563L0.667239 4.44018L3.07593 6.84887L3.07568 6.84912L3.95957 7.733L9.681 2.01157L8.79712 1.12768L3.95981 5.96499L1.55112 3.5563Z"
+                                                fill="white" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_62_3240">
+                                                <rect width="10" height="7.08333" fill="white"
+                                                    transform="translate(0 0.901123)" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                Wosk
+                            </div>
+                            <div class="card-check-item">
+                                <div class="orange">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="8" viewBox="0 0 10 8"
+                                        fill="none">
+                                        <g clip-path="url(#clip0_62_3240)">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M1.55112 3.5563L0.667239 4.44018L3.07593 6.84887L3.07568 6.84912L3.95957 7.733L9.681 2.01157L8.79712 1.12768L3.95981 5.96499L1.55112 3.5563Z"
+                                                fill="white" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_62_3240">
+                                                <rect width="10" height="7.08333" fill="white"
+                                                    transform="translate(0 0.901123)" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                Ozon
+                            </div>
+                            <div class="card-check-item">
+                                <div class="orange">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="8" viewBox="0 0 10 8"
+                                        fill="none">
+                                        <g clip-path="url(#clip0_62_3240)">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M1.55112 3.5563L0.667239 4.44018L3.07593 6.84887L3.07568 6.84912L3.95957 7.733L9.681 2.01157L8.79712 1.12768L3.95981 5.96499L1.55112 3.5563Z"
+                                                fill="white" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_62_3240">
+                                                <rect width="10" height="7.08333" fill="white"
+                                                    transform="translate(0 0.901123)" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                S.tum
+                            </div>
+                            <div class="card-check-item">
+                                <div class="orange">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="8" viewBox="0 0 10 8"
+                                        fill="none">
+                                        <g clip-path="url(#clip0_62_3240)">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M1.55112 3.5563L0.667239 4.44018L3.07593 6.84887L3.07568 6.84912L3.95957 7.733L9.681 2.01157L8.79712 1.12768L3.95981 5.96499L1.55112 3.5563Z"
+                                                fill="white" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_62_3240">
+                                                <rect width="10" height="7.08333" fill="white"
+                                                    transform="translate(0 0.901123)" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                Sieg
+                            </div>
+                            <div class="card-check-item">
+                                <div class="orange">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="8" viewBox="0 0 10 8"
+                                        fill="none">
+                                        <g clip-path="url(#clip0_62_3240)">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M1.55112 3.5563L0.667239 4.44018L3.07593 6.84887L3.07568 6.84912L3.95957 7.733L9.681 2.01157L8.79712 1.12768L3.95981 5.96499L1.55112 3.5563Z"
+                                                fill="white" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_62_3240">
+                                                <rect width="10" height="7.08333" fill="white"
+                                                    transform="translate(0 0.901123)" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                Шерсть
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-tab-item " id="content-4">
+                        <div class="card-tab-top">
+                            <div class="card-tab-image">
+                                <img src="src/assets/images/card-car.png" alt="">
+                                <div class="card-car-number">SA 7774</div>
+                                <div class="card-car-name">LADA Granta</div>
+                            </div>
+                            <div class="card-car-infos">
+                                <div class="card-car-price">
+                                    77.98€ // 5 Place // GAR
+                                </div>
+                                <div class="card-car-contact">
+                                    <a href="tel:+352691222444">+352 691 222 444</a>
+                                    <a href="mailto:jrgfeg@rhgfeg.com">jrgfeg@rhgfeg.com</a>
+                                </div>
+                                <a href="#" class="card-car-btn">карта</a>
+                            </div>
+                        </div>
+                        <div class="card-tab-checks">
+                            <div class="card-check-item">
+                                <div class="green">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="8" viewBox="0 0 10 8"
+                                        fill="none">
+                                        <g clip-path="url(#clip0_62_3240)">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M1.55112 3.5563L0.667239 4.44018L3.07593 6.84887L3.07568 6.84912L3.95957 7.733L9.681 2.01157L8.79712 1.12768L3.95981 5.96499L1.55112 3.5563Z"
+                                                fill="white" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_62_3240">
+                                                <rect width="10" height="7.08333" fill="white"
+                                                    transform="translate(0 0.901123)" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                int/ext
+                            </div>
+                            <div class="card-check-item">
+                                <div class="green">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="8" viewBox="0 0 10 8"
+                                        fill="none">
+                                        <g clip-path="url(#clip0_62_3240)">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M1.55112 3.5563L0.667239 4.44018L3.07593 6.84887L3.07568 6.84912L3.95957 7.733L9.681 2.01157L8.79712 1.12768L3.95981 5.96499L1.55112 3.5563Z"
+                                                fill="white" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_62_3240">
+                                                <rect width="10" height="7.08333" fill="white"
+                                                    transform="translate(0 0.901123)" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                Asp
+                            </div>
+                            <div class="card-check-item">
+                                <div class="green">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="8" viewBox="0 0 10 8"
+                                        fill="none">
+                                        <g clip-path="url(#clip0_62_3240)">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M1.55112 3.5563L0.667239 4.44018L3.07593 6.84887L3.07568 6.84912L3.95957 7.733L9.681 2.01157L8.79712 1.12768L3.95981 5.96499L1.55112 3.5563Z"
+                                                fill="white" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_62_3240">
+                                                <rect width="10" height="7.08333" fill="white"
+                                                    transform="translate(0 0.901123)" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                Glas
+                            </div>
+                            <div class="card-check-item">
+                                <div class="green">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="8" viewBox="0 0 10 8"
+                                        fill="none">
+                                        <g clip-path="url(#clip0_62_3240)">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M1.55112 3.5563L0.667239 4.44018L3.07593 6.84887L3.07568 6.84912L3.95957 7.733L9.681 2.01157L8.79712 1.12768L3.95981 5.96499L1.55112 3.5563Z"
+                                                fill="white" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_62_3240">
+                                                <rect width="10" height="7.08333" fill="white"
+                                                    transform="translate(0 0.901123)" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                Wosk
+                            </div>
+                            <div class="card-check-item">
+                                <div class="orange">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="8" viewBox="0 0 10 8"
+                                        fill="none">
+                                        <g clip-path="url(#clip0_62_3240)">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M1.55112 3.5563L0.667239 4.44018L3.07593 6.84887L3.07568 6.84912L3.95957 7.733L9.681 2.01157L8.79712 1.12768L3.95981 5.96499L1.55112 3.5563Z"
+                                                fill="white" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_62_3240">
+                                                <rect width="10" height="7.08333" fill="white"
+                                                    transform="translate(0 0.901123)" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                Ozon
+                            </div>
+                            <div class="card-check-item">
+                                <div class="orange">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="8" viewBox="0 0 10 8"
+                                        fill="none">
+                                        <g clip-path="url(#clip0_62_3240)">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M1.55112 3.5563L0.667239 4.44018L3.07593 6.84887L3.07568 6.84912L3.95957 7.733L9.681 2.01157L8.79712 1.12768L3.95981 5.96499L1.55112 3.5563Z"
+                                                fill="white" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_62_3240">
+                                                <rect width="10" height="7.08333" fill="white"
+                                                    transform="translate(0 0.901123)" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                S.tum
+                            </div>
+                            <div class="card-check-item">
+                                <div class="orange">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="8" viewBox="0 0 10 8"
+                                        fill="none">
+                                        <g clip-path="url(#clip0_62_3240)">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M1.55112 3.5563L0.667239 4.44018L3.07593 6.84887L3.07568 6.84912L3.95957 7.733L9.681 2.01157L8.79712 1.12768L3.95981 5.96499L1.55112 3.5563Z"
+                                                fill="white" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_62_3240">
+                                                <rect width="10" height="7.08333" fill="white"
+                                                    transform="translate(0 0.901123)" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                Sieg
+                            </div>
+                            <div class="card-check-item">
+                                <div class="orange">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="8" viewBox="0 0 10 8"
+                                        fill="none">
+                                        <g clip-path="url(#clip0_62_3240)">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M1.55112 3.5563L0.667239 4.44018L3.07593 6.84887L3.07568 6.84912L3.95957 7.733L9.681 2.01157L8.79712 1.12768L3.95981 5.96499L1.55112 3.5563Z"
+                                                fill="white" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_62_3240">
+                                                <rect width="10" height="7.08333" fill="white"
+                                                    transform="translate(0 0.901123)" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                Шерсть
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-open order-comment">
+                    Vesta с новым салоном, ручки хром, сиденья кожа,
+                    на стекле есть стрещина, переднее сиденье в чернилах. Vesta с новым салоном, ручки хром, сиденья
+                    кожа, на стекле есть стрещина, переднее сиденье в чернилах
+                </div>
+                <div class="order-map">
+                    <div style="position:relative;overflow:hidden;">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2244.203973354523!2d37.615999!3d55.756809!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a5c091fc4d5%3A0xf28e95a8b848dbef!2sUlitsa%20Okhotny%20Ryad%2C%20Moskva%2C%20Russia!5e0!3m2!1sen!2s!4v1605571693093!5m2!1sen!2s"
+                            width="560" height="400" frameborder="0" style="border:0;" allowfullscreen=""
+                            aria-hidden="false" tabindex="0">
+                        </iframe>
+                    </div>
+                </div>
+                <div class="order-infos mobile-open">
+                    <h2 class="order-info-title">Неделя 7-15 ноября:</h2>
+                    <p class="order-info-item">Заказов всего за эту неделю <span>28</span></p>
+                    <p class="order-info-item">Заказов уже выполнено<span>10</span></p>
+                    <p class="order-info-item">Заказов осталось <span>18</span></p>
+                    <p class="order-info-item">Заказов отменено <span>0</span></p>
+                    <h2 class="order-info-title">Неделя 7-15 ноября:</h2>
+                    <p class="order-info-item">Заказов всего в этом месяце <span>1665</span></p>
+                    <p class="order-info-item">Заказов уже выполнено<span>10</span></p>
+                    <p class="order-info-item">Заказов осталось <span>144</span></p>
+                    <p class="order-info-item">Заказов отменено <span>1</span></p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="./src/main.js"></script>
+</body>
+
+</html>

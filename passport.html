@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./src/order.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Tektur:wght@400..900&display=swap"
+        rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <title>Автомойка Люксембург</title>
+</head>
+
+<body class="white-bg">
+    <div class="wrapper">
+        <section class="passport">
+            <div class="container">
+                <h2 class="passport-name" th:text="#{passport.name}">паспорт клиента</h2>
+                <div class="password-top">
+                    <div class="images">
+                        <div class="thumbnails">
+                            <img src="src/assets/images/passport-card.png" alt="Thumbnail 1"
+                                onclick="changeImage('src/assets/images/passport-card.png')" />
+                            <img src="src/assets/images/passport-card.png" alt="Thumbnail 2"
+                                onclick="changeImage('src/assets/images/passport-card.png')" />
+                            <img src="src/assets/images/passport-card.png" alt="Thumbnail 3"
+                                onclick="changeImage('src/assets/images/passport-card.png')" />
+                        </div>
+                        <div class="main-image">
+                            <img id="mainImage" src="src/assets/images/passport-card.png" alt="Main Image" />
+                            <div class="discount-badge"><span>-50%</span> 15.01.2024</div>
+                            <a href="#" class="zoom">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29"
+                                    fill="none">
+                                    <path
+                                        d="M10.8513 21.8978C8.72291 21.8982 6.64223 21.2673 4.87245 20.085C3.10267 18.9027 1.7233 17.2221 0.908826 15.2557C0.0943511 13.2893 -0.118635 11.1256 0.29681 9.03813C0.712255 6.9507 1.73746 5.03337 3.24276 3.52868C7.4367 -0.66581 14.2609 -0.66581 18.4554 3.52868C22.6499 7.72317 22.6494 14.5469 18.4554 18.7413C17.4577 19.7415 16.2725 20.5351 14.9677 21.0768C13.6629 21.6184 12.264 21.8974 10.8513 21.8978ZM10.8513 3.13515C9.13321 3.1368 7.46123 3.69107 6.08239 4.71606C4.70355 5.74106 3.691 7.1824 3.19434 8.82713C2.69768 10.4719 2.74327 12.2327 3.32435 13.8496C3.90544 15.4664 4.99121 16.8534 6.42123 17.8057C6.86954 18.1044 7.34718 18.3565 7.84673 18.5581C9.30392 19.1488 10.9029 19.2968 12.4438 18.9835C13.9847 18.6703 15.399 17.9097 16.5098 16.7968C19.631 13.6756 19.631 8.59608 16.5098 5.47594C15.7671 4.73188 14.8846 4.14191 13.9132 3.73992C12.9417 3.33793 11.9004 3.13184 10.8491 3.1335L10.8513 3.13515Z"
+                                        fill="white" />
+                                    <path
+                                        d="M26.8952 28.5553C26.7144 28.5556 26.5354 28.5201 26.3684 28.4509C26.2014 28.3818 26.0498 28.2804 25.9221 28.1524L16.5105 18.7408C16.2524 18.4828 16.1074 18.1327 16.1074 17.7677C16.1074 17.4028 16.2524 17.0527 16.5105 16.7947C16.7686 16.5366 17.1186 16.3916 17.4836 16.3916C17.8485 16.3916 18.1986 16.5366 18.4566 16.7947L27.8682 26.2063C28.0607 26.3987 28.1918 26.6439 28.2449 26.9108C28.298 27.1778 28.2708 27.4545 28.1666 27.7059C28.0625 27.9574 27.8861 28.1723 27.6597 28.3235C27.4334 28.4747 27.1673 28.5554 26.8952 28.5553Z"
+                                        fill="white" />
+                                </svg>
+                            </a>
+                        </div>
+                        <ul class="mobile-open">
+                            <li>11.10.22</li>
+                            <li>H700AA</li>
+                            <li>LADA</li>
+                            <li>Vesta</li>
+                        </ul>
+                    </div>
+                    <div class="details">
+                        <div class="details-infos">
+                            <p>Дата регистрации <span>11.10.22</span></p>
+                            <p>Номер автомобиля <span>H700AA</span></p>
+                            <p>Марка авто <span>LADA</span></p>
+                            <p>Модель авто <span>Vesta</span></p>
+                        </div>
+                        <div class="details-person">
+                            <div class="details-person-item">
+                                <h2>Иванов Иван Иванович</h2>
+                                <div class="details-person-contacts">
+                                    <a href="tel:+79009005060">+7 900 900 50 60</a>
+                                    <a href="mailto:test_1980@gmail.com">test_1980@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="details-person-item">
+                                <h2>Александров Виктор Львович</h2>
+                                <div class="details-person-contacts">
+                                    <a href="tel:+79009005060">+7 900 900 50 60</a>
+                                    <a href="mailto:test_1980@gmail.com">test_1980@gmail.com</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="comment">
+                        <div class="comment-text">
+                            <p>Коментарий:</p>
+                            <p>
+                                Vesta с новым салоном, ручки хром, сиденья кожа, на стекле есть стрещина, переднее
+                                сиденье в
+                                чернилах. Vesta с новым салоном, ручки хром, сиденья кожа, на стекле есть стрещина,
+                                переднее
+                                сиденье в чернилах
+                                Vesta с новым салоном, ручки хром, сиденья кожа, на стекле есть стрещина, переднее
+                                сиденье в
+                                чернилах. Vesta с новым салоном, ручки хром, сиденья кожа, на стекле есть стрещина,
+                                переднее
+                                сиденье в чернилах
+                            </p>
+                        </div>
+                        <a href="#" class="orange-btn-bordered">Редактировать</a>
+                    </div>
+                </div>
+
+                <div class="passport-table-container">
+                    <table class="custom-table mobile-hidden">
+                        <thead>
+                            <tr>
+                                <th>№</th>
+                                <th>Дата мойки</th>
+                                <th>Что мыли</th>
+                                <th>Цена</th>
+                                <th>Скидка</th>
+                                <th>Отмена</th>
+                                <th>Рейтинг</th>
+                                <th>Карта</th>
+                                <th>Комментарий</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>11.10.22</td>
+                                <td>in, ext, w, d, ST</td>
+                                <td>77.7€</td>
+                                <td>50%</td>
+                                <td>нет</td>
+                                <td>5</td>
+                                <td><span class="plus">+</span></td>
+                                <td>Vesta с новым салоном, ручки хром, сиденья кожа, на стекле есть стрещина, переднее
+                                    сиденье в чернилах..</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>11.10.22</td>
+                                <td>in, ext, w, d, ST</td>
+                                <td>77.7€</td>
+                                <td>50%</td>
+                                <td>нет</td>
+                                <td>5</td>
+                                <td><span class="plus">+</span></td>
+                                <td>Vesta с новым салоном, ручки хром, сиденья кожа, на стекле есть стрещина, переднее
+                                    сиденье в чернилах..</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>11.10.22</td>
+                                <td>in, ext, w, d, ST</td>
+                                <td>77.7€</td>
+                                <td>50%</td>
+                                <td>нет</td>
+                                <td>5</td>
+                                <td><span class="plus">+</span></td>
+                                <td>Vesta с новым салоном, ручки хром, сиденья кожа, на стекле есть стрещина, переднее
+                                    сиденье в чернилах..</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>11.10.22</td>
+                                <td>in, ext, w, d, ST</td>
+                                <td>77.7€</td>
+                                <td>50%</td>
+                                <td>нет</td>
+                                <td>5</td>
+                                <td><span class="plus">+</span></td>
+                                <td>Vesta с новым салоном, ручки хром, сиденья кожа, на стекле есть стрещина, переднее
+                                    сиденье в чернилах..</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>11.10.22</td>
+                                <td>in, ext, w, d, ST</td>
+                                <td>77.7€</td>
+                                <td>50%</td>
+                                <td>нет</td>
+                                <td>5</td>
+                                <td><span class="plus">+</span></td>
+                                <td>Vesta с новым салоном, ручки хром, сиденья кожа, на стекле есть стрещина, переднее
+                                    сиденье в чернилах..</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>11.10.22</td>
+                                <td>in, ext, w, d, ST</td>
+                                <td>77.7€</td>
+                                <td>50%</td>
+                                <td>нет</td>
+                                <td>5</td>
+                                <td><span class="plus">+</span></td>
+                                <td>Vesta с новым салоном, ручки хром, сиденья кожа, на стекле есть стрещина, переднее
+                                    сиденье в чернилах..</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>11.10.22</td>
+                                <td>in, ext, w, d, ST</td>
+                                <td>77.7€</td>
+                                <td>50%</td>
+                                <td>нет</td>
+                                <td>5</td>
+                                <td><span class="plus">+</span></td>
+                                <td>Vesta с новым салоном, ручки хром, сиденья кожа, на стекле есть стрещина, переднее
+                                    сиденье в чернилах..</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="mobile-open">
+                    <div class="table-card-passport">
+                        <table>
+                            <tr>
+                                <th>№</th>
+                                <th>1</th>
+                                <th>Дата</th>
+                                <th>11.10.22</th>
+                            </tr>
+                            <tr>
+                                <th>Цена</th>
+                                <th>77.7€</th>
+                                <th>Скидка</th>
+                                <th>50%</th>
+                            </tr>
+                            <tr>
+                                <th>Мыли</th>
+                                <td colspan="3" style="text-align: start;">in, ext, w, d, ST</td>
+                            </tr>
+                            <tr>
+                                <th>Отмена</th>
+                                <td>нет</td>
+                                <th>Рейтинг</th>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <th>Карта</th>
+                                <td><span class="plus">+</span></td>
+                                <th>Где</th>
+                                <td>Гараж</td>
+                            </tr>
+                            <tr>
+                                <th>Адрес</th>
+                                <td colspan="3" style="text-align: start;">г. Москва, ул. Серова, 15</td>
+                            </tr>
+                        </table>
+                        <p class="description">
+                            Vesta с новым салоном, ручки хром, сиденья кожа, на стекле есть трещина, переднее сиденье в
+                            чернилах.
+                        </p>
+                    </div>
+                    <div class="table-card-passport">
+                        <table>
+                            <tr>
+                                <th>№</th>
+                                <th>2</th>
+                                <th>Дата</th>
+                                <th>11.10.22</th>
+                            </tr>
+                            <tr>
+                                <th>Цена</th>
+                                <th>77.7€</th>
+                                <th>Скидка</th>
+                                <th>50%</th>
+                            </tr>
+                            <tr>
+                                <th>Мыли</th>
+                                <td colspan="3" style="text-align: start;">in, ext, w, d, ST</td>
+                            </tr>
+                            <tr>
+                                <th>Отмена</th>
+                                <td>нет</td>
+                                <th>Рейтинг</th>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <th>Карта</th>
+                                <td><span class="plus">+</span></td>
+                                <th>Где</th>
+                                <td>Гараж</td>
+                            </tr>
+                            <tr>
+                                <th>Адрес</th>
+                                <td colspan="3" style="text-align: start;">г. Москва, ул. Серова, 15</td>
+                            </tr>
+                        </table>
+                        <p class="description">
+                            Vesta с новым салоном, ручки хром, сиденья кожа, на стекле есть трещина, переднее сиденье в
+                            чернилах.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="./src/order.js"></script>
+</body>
+
+</html>
