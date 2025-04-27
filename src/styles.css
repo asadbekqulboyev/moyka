@@ -675,7 +675,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 0 31px 0;
 }
 
 .vip-card .card-content .left {
@@ -954,7 +953,9 @@ body {
   font-weight: 700;
   line-height: 110%;
   text-transform: uppercase;
-  padding-top: 21px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .wash-car .wash-car-content .car-item .img-wrap .text-wrap.tw2 {
