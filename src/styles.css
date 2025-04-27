@@ -481,8 +481,8 @@ body {
   justify-content: center;
   gap: 10.558px;
   border-radius: 7.735px;
-  background: #f60;
   width: max-content;
+background: rgba(255, 102, 0, 0.35);
   align-items: center;
 }
 
