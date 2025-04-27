@@ -2669,6 +2669,9 @@ input[type="checkbox"]:checked + .custom-checkbox svg {
   line-height: 110%;
   text-transform: uppercase;
   margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .services-row {
