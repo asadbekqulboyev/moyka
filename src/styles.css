@@ -2790,6 +2790,11 @@ input[type="checkbox"]:checked + .custom-checkbox svg {
   left: 0;
   position: absolute;
 }
+@media (max-width: 768px) {
+  .services-item ul:after {
+    display: none;
+  }
+}
 
 .services-item li {
   padding-left: 13px;
@@ -3882,6 +3887,67 @@ input[type="checkbox"]:checked + .custom-checkbox svg {
   }
 }
 
+.header-menu .link-1 svg {
+  width: 208px;
+}
+.header-menu .link-1 span {
+  width: calc(100% - 208px);
+}
+
+.header-menu .link-2 svg {
+  width: 245px;
+}
+
+.header-menu .link-2 span {
+  width: calc(100% - 200px);
+}
+
+.header-menu .link-3 svg {
+  width: 217px;
+}
+
+.header-menu .link-3 span {
+  width: calc(100% - 217px);
+}
+
+.header-menu .link-4 svg {
+  width: 298px;
+}
+
+.header-menu .link-4 span {
+  width: calc(100% - 128px);
+}
+
+.header-menu .link-5 svg {
+  width: 222px;
+}
+
+.header-menu .link-5 span {
+  width: calc(100% - 222px);
+}
+
+.header-menu .link-6 svg {
+  width: 296px;
+}
+.header-menu .link-6 span {
+  width: calc(100% - 126px);
+}
+.header-menu .link-7 svg {
+  width: 182px;
+}
+
+.header-menu .link-7 span {
+  width: calc(100% - 182px);
+}
+
+.header-menu .link-8 svg {
+  width: 280px;
+}
+
+.header-menu .link-8 span {
+  width: calc(100% - 120px);
+}
+
 @media (max-width: 768px) {
   .vip-card .card-content .left {
     margin-left: 0;
@@ -4344,33 +4410,62 @@ input[type="checkbox"]:checked + .custom-checkbox svg {
   .header-menu .link-1 svg {
     width: 208px;
   }
+  .header-menu .link-1 span {
+    width: calc(100% - 118px);
+  }
 
   .header-menu .link-2 svg {
     width: 245px;
+  }
+
+  .header-menu .link-2 span {
+    width: calc(100% - 55px);
   }
 
   .header-menu .link-3 svg {
     width: 217px;
   }
 
+  .header-menu .link-3 span {
+    width: calc(100% - 117px);
+  }
+
   .header-menu .link-4 svg {
     width: 298px;
+  }
+
+  .header-menu .link-4 span {
+    width: calc(100% - 108px);
   }
 
   .header-menu .link-5 svg {
     width: 222px;
   }
 
+  .header-menu .link-5 span {
+    width: calc(100% - 122px);
+  }
+
   .header-menu .link-6 svg {
     width: 296px;
   }
-
+  .header-menu .link-6 span {
+    width: calc(100% - 96px);
+  }
   .header-menu .link-7 svg {
     width: 182px;
   }
 
+  .header-menu .link-7 span {
+    width: calc(100% - 182px);
+  }
+
   .header-menu .link-8 svg {
     width: 280px;
+  }
+
+  .header-menu .link-8 span {
+    width: calc(100% - 80px);
   }
 
   .header-menu {
@@ -4675,16 +4770,6 @@ input[type="checkbox"]:checked + .custom-checkbox svg {
     overflow: hidden;
   }
 
-  .services-item::after {
-    content: "";
-    background-color: #000;
-    width: 1px;
-    height: 100%;
-    position: absolute;
-    right: 3px;
-    top: 0;
-  }
-
   .services-item h4 {
     font-size: 18px;
     color: #f60;
@@ -4832,7 +4917,6 @@ input[type="checkbox"]:checked + .custom-checkbox svg {
   }
 
   .services-item ul {
-    overflow: scroll;
     width: 100%;
   }
 
