@@ -3052,7 +3052,7 @@ input[type="checkbox"]:checked + .custom-checkbox svg {
   cursor: pointer;
 }
 .header-menu a span {
-  line-height: normal;
+  line-height: 0.98;
 }
 
 .header-menu a:hover svg path {
@@ -4410,6 +4410,7 @@ input[type="checkbox"]:checked + .custom-checkbox svg {
 
   .header-menu a {
     font-size: 12px;
+    font-weight: 600;
     gap: 5px;
   }
 
