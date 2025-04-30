@@ -4562,8 +4562,7 @@ input[type="checkbox"]:checked + .custom-checkbox svg {
     padding: 20px 10px;
     transform: scale(1);
     border-radius: 10px;
-    /* border: 1px solid white; */
-    gap: 20px;
+    gap: 10px;
     width: 100%;
     padding: 0;
   }
@@ -4571,10 +4570,10 @@ input[type="checkbox"]:checked + .custom-checkbox svg {
   .intro .intro-content .mini-info p {
     color: #fff;
     font-family: Manrope;
-    font-size: 14px;
+    font-size: 12px;
     font-style: normal;
-    font-weight: 800;
-    line-height: 20px;
+    font-weight: 600;
+    line-height: 12px;
   }
 
   .intro .intro-content .mini-info .mini-info-item {
@@ -4584,6 +4583,10 @@ input[type="checkbox"]:checked + .custom-checkbox svg {
 
   .intro .intro-content .mini-info .mini-info-item.hour {
     width: 100%;
+    padding: 4px 10px;
+  }
+  .intro .intro-content .mini-info .mini-info-item.hour span {
+    font-size: 12px;
   }
 
   .intro .intro-content .mini-info .mini-info-item .icons .icon {
