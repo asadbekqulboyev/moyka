@@ -4409,7 +4409,8 @@ input[type="checkbox"]:checked + .custom-checkbox svg {
   }
 
   .header-menu a {
-    font-size: 13px;
+    font-size: 12px;
+    gap: 5px;
   }
 
   .header-menu .link-1 svg {
