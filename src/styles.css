@@ -132,7 +132,7 @@ body {
   -webkit-backdrop-filter: blur(10px);
   height: fit-content;
 }
-.intro-wrapper .header.scrolled .logo img {
+.intro-wrapper .header .logo img {
   transition: all 0.3s linear;
 }
 .intro-wrapper .header.scrolled .logo img {
