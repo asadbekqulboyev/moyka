@@ -4777,7 +4777,6 @@ input[type="checkbox"]:checked + .custom-checkbox svg {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    overflow: hidden;
   }
 
   .services-item h4 {
@@ -4818,9 +4817,9 @@ input[type="checkbox"]:checked + .custom-checkbox svg {
   }
 
   .services-item button {
-    width: calc(100% + 15px);
+    width: calc(100% + 8px);
     position: relative;
-    margin-left: -8px;
+    margin-left: -7px;
     margin-bottom: -1px;
   }
 
@@ -4830,6 +4829,9 @@ input[type="checkbox"]:checked + .custom-checkbox svg {
 
   .services-item.no h4 {
     min-width: auto;
+  }
+  .services-item ul.active ~ button::after {
+    display: none;
   }
 
   .services-swiper .second-next-services svg,
@@ -4901,14 +4903,30 @@ input[type="checkbox"]:checked + .custom-checkbox svg {
   }
 
   .services-item button {
-    height: 38px;
-    padding: 12px 0;
+    height: fit-content;
+    padding: 4px 20px;
     border: none;
+    position: relative;
+    border-radius: 0px 0px 5px 5px;
   }
 
   .services-item button .arrows svg {
     width: 12px;
     height: 6px;
+  }
+  .services-item button::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 30px;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) -3.57%,
+      #ccd0d4 125%
+    );
+    position: absolute;
+    top: -30px;
+    z-index: 1212;
   }
 
   .services-pagination .swiper-pagination-bullet {
